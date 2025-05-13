@@ -14,7 +14,6 @@ namespace Microservice.Catalog.Api.Features.Courses
         public static void AddCoursegroupEnpointExt(this WebApplication app,ApiVersionSet apiVersionSet)
         {
             app.MapGroup("/api/courses")
-                .WithApiVersionSet(apiVersionSet)
                 .WithTags("Courses")
                 .CreateCourseGroupItemEndpoint()
                 .GetAllCourseGroupItemEndpoint()
