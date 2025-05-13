@@ -1,0 +1,57 @@
+@baseAddress = http://localhost:5012
+@categoryId = 08dd8c06-66a2-62ea-2cf0-5dfda9280000
+@courseId = 08dd8da3-a593-a4bd-2cf0-5dfda9280000
+@userId = 08dd9095-6b96-60d3-2cf0-5dfda9280000
+GET {{baseAddress}}/api/categories
+Accept: application/json
+
+###
+POST {{baseAddress}}/api/categories
+Accept: application/json
+Content-Type:application/json
+{
+  "name":"Category 1"
+}
+
+###
+GET {{baseAddress}}/api/categories/{{categoryId}}
+Accept: application/json
+###
+
+###
+POST {{baseAddress}}/api/courses
+Accept: application/json
+Content-Type:application/json
+{
+  "name":"Course 1",
+  "description":"Category 1",
+  "categoryId":"{{categoryId}}",
+  "imageUrl":"https://www.google.com",
+  "price":100
+}
+
+###
+GET {{baseAddress}}/api/courses
+Accept: application/json
+
+
+###
+GET {{baseAddress}}/api/courses/{{courseId}}
+Accept: application/json
+###
+
+PUT {{baseAddress}}/api/courses
+Accept: application/json
+Content-Type:application/json
+{
+  "id":"{{courseId}}",
+  "name":"new course 1",
+  "description":"Category 1",
+  "categoryId":"{{categoryId}}",
+  "imageUrl":"https://www.google.com",
+  "price":199
+}
+###
+GET {{baseAddress}}/api/courses/user/{{userId}}
+Accept: application/json
+###
